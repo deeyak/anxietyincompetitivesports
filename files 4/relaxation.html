@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relaxation Techniques — Anxiety Management in Sports</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .technique-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 12px; padding: 32px; margin-bottom: 28px;
+  }
+  .technique-card .t-header {
+    display: flex; align-items: center; gap: 14px; margin-bottom: 20px;
+  }
+  .technique-card .t-icon {
+    width: 48px; height: 48px; border-radius: 10px;
+    background: rgba(74,144,196,0.1); font-size: 1.5rem;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .technique-card h2 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--navy); margin-bottom: 0; }
+  .breathing-steps { list-style:none; margin-left:0!important; }
+  .breathing-steps li {
+    display: flex; gap: 14px; margin-bottom: 16px; align-items: flex-start;
+  }
+  .bs-num {
+    min-width: 28px; height: 28px; border-radius: 50%;
+    background: var(--sky-light); color: var(--navy);
+    font-size: 0.78rem; font-weight: 700;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .links-section { margin-top: 40px; }
+  .link-row { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
+  .ext-link {
+    display: flex; align-items: center; gap: 12px;
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 8px; padding: 14px 18px;
+    text-decoration: none; color: var(--text);
+    transition: all 0.2s;
+  }
+  .ext-link:hover { border-color: var(--sky); background: rgba(74,144,196,0.04); }
+  .ext-link .el-icon { font-size: 1.2rem; }
+  .ext-link .el-body { flex: 1; }
+  .ext-link .el-title { font-weight: 600; font-size: 0.9rem; display: block; }
+  .ext-link .el-sub { color: var(--text-muted); font-size: 0.8rem; }
+  .ext-link .el-arrow { color: var(--sky); font-size: 0.8rem; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">⚡ <span>Anxiety</span> in Sports</a>
+  <div class="nav-links">
+    <a href="introduction.html">Introduction</a>
+    <a href="visualization.html">Visualization</a>
+    <a href="relaxation.html" class="active">Relaxation</a>
+    <a href="self-talk.html">Positive Self-Talk</a>
+  </div>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="introduction.html">Introduction</a>
+  <a href="visualization.html">Visualization Techniques</a>
+  <a href="relaxation.html">Relaxation Techniques</a>
+  <a href="self-talk.html">Positive Self-Talk</a>
+</div>
+
+<div class="page-hero">
+  <span class="eyebrow">Relaxation</span>
+  <h1>Calm Your Body,<br>Quiet Your Mind</h1>
+  <p>Breathing exercises, grounding techniques, and progressive muscle relaxation to stop anxious thoughts in their tracks.</p>
+</div>
+
+<div class="page-content">
+
+  <div class="info-block accent-left" style="margin-bottom:40px;">
+    <p>Relaxation techniques such as breathing exercises, grounding exercises, and progressive muscle relaxation can calm the mind and ground you to prevent the stream of anxious thoughts. Research shows that <strong>taking just 6 deep breaths within 30 seconds can significantly reduce blood pressure.</strong></p>
+    <p style="margin-bottom:0;font-size:0.8rem;color:var(--text-muted);margin-top:8px;">Tavoian, D., &amp; Craighead, D. H. (2023). Deep breathing exercise at work. <em>Frontiers in Physiology</em>, 14, 1040091.</p>
+  </div>
+
+  <div class="technique-card">
+    <div class="t-header">
+      <div class="t-icon">📦</div>
+      <h2>Box Breathing</h2>
+    </div>
+    <p>Follow this simple 4-step routine, repeating until you feel calm. Imagine tracing the sides of a box as you breathe.</p>
+    <ul class="breathing-steps" style="margin-top:20px;">
+      <li><div class="bs-num">1</div><div>Trace <em>up</em> the box — <strong>inhale</strong> for 4 seconds</div></li>
+      <li><div class="bs-num">2</div><div>Trace <em>across</em> the top — <strong>hold</strong> your breath for 4 seconds</div></li>
+      <li><div class="bs-num">3</div><div>Trace <em>down</em> the box — <strong>exhale</strong> for 4 seconds</div></li>
+      <li><div class="bs-num">4</div><div>Complete the box — <strong>hold</strong> the empty breath for 4 seconds</div></li>
+    </ul>
+    <p style="margin-top:16px;color:var(--text-muted);font-size:0.85rem;">Repeat the cycle until you feel calm and grounded.</p>
+  </div>
+
+  <div class="technique-card">
+    <div class="t-header">
+      <div class="t-icon">🌬️</div>
+      <h2>4-7-8 Breathing</h2>
+    </div>
+    <p>A calming breath pattern that activates your parasympathetic nervous system. Repeat until you feel at ease.</p>
+    <ul class="breathing-steps" style="margin-top:20px;">
+      <li><div class="bs-num">1</div><div><strong>Inhale</strong> through your nose (mouth closed, tongue resting behind front teeth) for <strong>4 seconds</strong></div></li>
+      <li><div class="bs-num">2</div><div><strong>Hold</strong> your breath for <strong>7 seconds</strong></div></li>
+      <li><div class="bs-num">3</div><div><strong>Exhale</strong> through your mouth for <strong>8 seconds</strong>, making a whooshing sound</div></li>
+    </ul>
+  </div>
+
+  <div class="technique-card">
+    <div class="t-header">
+      <div class="t-icon">🌿</div>
+      <h2>5-4-3-2-1 Grounding Exercise</h2>
+    </div>
+    <p>Ease your state of mind by engaging your senses. This grounds you in the present moment and interrupts anxious thinking.</p>
+    <ul class="breathing-steps" style="margin-top:20px;">
+      <li><div class="bs-num">5</div><div>Name <strong>5 things you can see</strong></div></li>
+      <li><div class="bs-num">4</div><div>Name <strong>4 things you can touch</strong></div></li>
+      <li><div class="bs-num">3</div><div>Name <strong>3 things you can hear</strong></div></li>
+      <li><div class="bs-num">2</div><div>Name <strong>2 things you can smell</strong></div></li>
+      <li><div class="bs-num">1</div><div>Name <strong>1 thing you can taste</strong></div></li>
+    </ul>
+  </div>
+
+  <div class="technique-card">
+    <div class="t-header">
+      <div class="t-icon">💪</div>
+      <h2>Progressive Muscle Relaxation (PMR)</h2>
+    </div>
+    <p>PMR is a technique that reduces stress and physical tension by systematically tensing and then releasing muscle groups throughout the body.</p>
+    <p><strong>Focus on different muscle groups:</strong> arms, legs, face, hands, core.</p>
+    <ul class="breathing-steps" style="margin-top:20px;">
+      <li><div class="bs-num">1</div><div><strong>Tense</strong> one muscle group for 5 seconds while <strong>inhaling</strong>, then hold for 5 seconds</div></li>
+      <li><div class="bs-num">2</div><div><strong>Suddenly release</strong> and relax that muscle for 10 seconds while <strong>exhaling</strong></div></li>
+      <li><div class="bs-num">3</div><div><strong>Repeat</strong> through different muscle groups, working from one end of the body to the other</div></li>
+    </ul>
+  </div>
+
+  <hr class="section-divider">
+
+  <div class="links-section">
+    <h2>Additional Resources</h2>
+    <p>Guided meditations and relaxing music to support your pre-competition routine:</p>
+    <div class="link-row">
+      <a href="https://youtu.be/Sps39GOBOVo?si=6hlRyCbtRrZ2aNvK" target="_blank" class="ext-link">
+        <div class="el-icon">🎧</div>
+        <div class="el-body">
+          <span class="el-title">Game Day Meditation — Preparation for Athletes</span>
+          <span class="el-sub">Amanda Sellers Meditation · YouTube</span>
+        </div>
+        <span class="el-arrow">↗</span>
+      </a>
+      <a href="https://youtu.be/kzTpalSKsMo?si=QWeKN40H7DkguFuY" target="_blank" class="ext-link">
+        <div class="el-icon">🎧</div>
+        <div class="el-body">
+          <span class="el-title">Meditation for Athletes: Finding Confidence</span>
+          <span class="el-sub">MindStrong Sport · YouTube</span>
+        </div>
+        <span class="el-arrow">↗</span>
+      </a>
+      <a href="https://open.spotify.com/playlist/37i9dQZF1DX1KVBf2zZZ2X" target="_blank" class="ext-link">
+        <div class="el-icon">🎵</div>
+        <div class="el-body">
+          <span class="el-title">Calming Nature Music</span>
+          <span class="el-sub">Playlist · Spotify</span>
+        </div>
+        <span class="el-arrow">↗</span>
+      </a>
+      <a href="https://open.spotify.com/playlist/37i9dQZF1DWZqd5JICZI0u" target="_blank" class="ext-link">
+        <div class="el-icon">🎵</div>
+        <div class="el-body">
+          <span class="el-title">Peaceful Meditation</span>
+          <span class="el-sub">Playlist · Spotify</span>
+        </div>
+        <span class="el-arrow">↗</span>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>Resources: <a href="https://www.cdc.gov/mental-health/caring/index.html" target="_blank">CDC Mental Health</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6646850/" target="_blank">Research on Performance Anxiety</a></p>
+  <p style="margin-top:8px;">Anxiety Management in Sports — A resource for athletes at every level</p>
+</footer>
+
+<script>function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}</script>
+</body>
+</html>

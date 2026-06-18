@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anxiety Management in Sports</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a2744;
+    --sky: #4a90c4;
+    --sky-light: #c8dff2;
+    --mint: #72c1a0;
+    --cream: #f8f6f1;
+    --white: #ffffff;
+    --text: #1a2744;
+    --text-muted: #5a6a84;
+    --border: #dce6f0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--cream); }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--navy);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%;
+    height: 64px;
+  }
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    color: var(--white);
+    font-size: 1.1rem;
+    text-decoration: none;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .nav-logo span { color: var(--mint); }
+  .nav-links { display: flex; gap: 8px; }
+  .nav-links a {
+    color: #a8bdd4;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .nav-links a:hover, .nav-links a.active {
+    color: var(--white);
+    background: rgba(255,255,255,0.1);
+  }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { width: 22px; height: 2px; background: white; border-radius: 2px; }
+  .mobile-menu {
+    display: none; position: fixed; top: 64px; left: 0; right: 0;
+    background: var(--navy); padding: 16px 5%; z-index: 99;
+    flex-direction: column; gap: 4px;
+  }
+  .mobile-menu a {
+    color: #a8bdd4; text-decoration: none; font-size: 0.9rem;
+    font-weight: 500; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .mobile-menu.open { display: flex; }
+
+  /* HERO */
+  .hero {
+    margin-top: 64px;
+    min-height: calc(100vh - 64px);
+    background: linear-gradient(135deg, var(--navy) 0%, #2a3f6e 60%, #1e4d6b 100%);
+    display: flex; align-items: center; justify-content: center;
+    text-align: center;
+    padding: 80px 5%;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 40%, rgba(74,144,196,0.25) 0%, transparent 60%),
+                radial-gradient(ellipse at 20% 80%, rgba(114,193,160,0.15) 0%, transparent 50%);
+  }
+  .hero-content { position: relative; max-width: 700px; }
+  .hero-eyebrow {
+    display: inline-block;
+    color: var(--mint);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    padding: 6px 16px;
+    border: 1px solid rgba(114,193,160,0.4);
+    border-radius: 20px;
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 24px;
+  }
+  .hero h1 em { font-style: italic; color: var(--sky-light); }
+  .hero p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.7);
+    max-width: 540px;
+    margin: 0 auto 40px;
+  }
+  .hero-cta {
+    display: inline-block;
+    background: var(--mint);
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 14px 32px;
+    border-radius: 6px;
+    letter-spacing: 0.02em;
+    transition: all 0.2s;
+  }
+  .hero-cta:hover { background: #5dae8a; transform: translateY(-1px); }
+
+  /* CARDS SECTION */
+  .cards-section {
+    padding: 80px 5%;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .section-label {
+    text-align: center;
+    color: var(--sky);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .section-title {
+    text-align: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    color: var(--navy);
+    margin-bottom: 48px;
+  }
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+  }
+  .card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 32px 28px;
+    text-decoration: none;
+    color: var(--text);
+    border: 1px solid var(--border);
+    transition: all 0.25s;
+    display: block;
+  }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(26,39,68,0.12); border-color: var(--sky-light); }
+  .card-icon {
+    width: 48px; height: 48px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  .card-icon.blue { background: rgba(74,144,196,0.12); }
+  .card-icon.green { background: rgba(114,193,160,0.15); }
+  .card-icon.purple { background: rgba(130,100,200,0.12); }
+  .card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+  .card p { font-size: 0.88rem; line-height: 1.65; color: var(--text-muted); }
+  .card-arrow { margin-top: 20px; color: var(--sky); font-size: 0.82rem; font-weight: 600; }
+
+  /* STAT BAND */
+  .stat-band {
+    background: var(--navy);
+    padding: 56px 5%;
+    text-align: center;
+  }
+  .stat-band blockquote {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-style: italic;
+    color: var(--sky-light);
+    max-width: 700px;
+    margin: 0 auto 16px;
+    line-height: 1.5;
+  }
+  .stat-band cite { color: rgba(255,255,255,0.5); font-size: 0.85rem; font-style: normal; }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 32px 5%;
+    text-align: center;
+    color: rgba(255,255,255,0.4);
+    font-size: 0.8rem;
+  }
+  footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">⚡ <span>Anxiety</span> in Sports</a>
+  <div class="nav-links">
+    <a href="introduction.html">Introduction</a>
+    <a href="visualization.html">Visualization</a>
+    <a href="relaxation.html">Relaxation</a>
+    <a href="self-talk.html">Positive Self-Talk</a>
+  </div>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="introduction.html">Introduction</a>
+  <a href="visualization.html">Visualization Techniques</a>
+  <a href="relaxation.html">Relaxation Techniques</a>
+  <a href="self-talk.html">Positive Self-Talk</a>
+</div>
+
+<section class="hero">
+  <div class="hero-content">
+    <span class="hero-eyebrow">Mental Performance</span>
+    <h1>Anxiety Management<br>in <em>Sports</em></h1>
+    <p>Tools and strategies to help athletes manage anxiety, build confidence, and perform at their best — whether you're facing pre-game nerves or ongoing performance anxiety.</p>
+    <a href="introduction.html" class="hero-cta">Start Here →</a>
+  </div>
+</section>
+
+<section class="cards-section">
+  <p class="section-label">What You'll Find</p>
+  <h2 class="section-title">Three Tools for Every Athlete</h2>
+  <div class="cards-grid">
+    <a href="introduction.html" class="card">
+      <div class="card-icon blue">🧠</div>
+      <h3>Introduction</h3>
+      <p>Learn what sports anxiety is, its causes, symptoms, and how it affects performance — plus how to break the stigma.</p>
+      <p class="card-arrow">Learn more →</p>
+    </a>
+    <a href="visualization.html" class="card">
+      <div class="card-icon green">🎯</div>
+      <h3>Visualization</h3>
+      <p>Mentally rehearse success before competition with sport-specific guided visualization scripts for 10 different sports.</p>
+      <p class="card-arrow">Explore scripts →</p>
+    </a>
+    <a href="relaxation.html" class="card">
+      <div class="card-icon blue">🌬️</div>
+      <h3>Relaxation Techniques</h3>
+      <p>Box breathing, 4-7-8 breathing, grounding exercises, and progressive muscle relaxation to calm your body and mind.</p>
+      <p class="card-arrow">Try it now →</p>
+    </a>
+    <a href="self-talk.html" class="card">
+      <div class="card-icon purple">💬</div>
+      <h3>Positive Self-Talk</h3>
+      <p>Shift your inner dialogue with sport-specific affirmations and techniques proven to improve performance by up to 11%.</p>
+      <p class="card-arrow">Find your words →</p>
+    </a>
+  </div>
+</section>
+
+<section class="stat-band">
+  <blockquote>"I say put mental health first. Because if you don't then you're not going to enjoy your sport and you're not going to succeed as much as you want to."</blockquote>
+  <cite>— Simone Biles</cite>
+</section>
+
+<footer>
+  <p>Resources: <a href="https://www.cdc.gov/mental-health/caring/index.html" target="_blank">CDC Mental Health</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6646850/" target="_blank">Research on Performance Anxiety</a></p>
+  <p style="margin-top:8px;">Anxiety Management in Sports — A resource for athletes at every level</p>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+</script>
+</body>
+</html>
